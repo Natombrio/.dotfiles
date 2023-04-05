@@ -669,30 +669,33 @@ use ~/.config/nushell/completions/git-completion.nu *
 
 
 def-env ts [folder_name?: string] {
+    let tmux_sessions = (tmux list-sessions -F '#S')
     if ($folder_name == null) {
-        let folder = (fd . --type directory -d 1 ~/.config/ ~/linux_projects/ | sk -1)
-        cd $folder
-        tmux new-session -A -s (basename ($folder))
+        let f_path = (fd . -H --type directory -d 1 ~/.config/ ~/linux_projects/ ~ | sk -1)
+        let f_name = (basename ($f_path))
+        if ($tmux_sessions != null and $f_name in $tmux_sessions) {
+            tmux switch-client -t $f_name
+        } else {
+            cd $f_path
+            tmux new-session -A -s $f_name
+        }
     } else {
-        let folder = (fd . --type directory -d 1 ~/.config/ ~/linux_projects/ | sk -1 -q $folder_name)
-        cd $folder
-        tmux new-session -A -s (basename ($folder))
+        let f_path = (fd . -H --type directory -d 1 ~/.config/ ~/linux_projects/ ~ | sk -1 -q $folder_name)
+        let f_name = (basename ($f_path))
+        if ($tmux_sessions != null and $f_name in $tmux_sessions) {
+            tmux switch-client -t $f_name
+        } else {
+            cd $f_path
+            tmux new-session -A -s $f_name
+        }
     }
 }
 
 def-env cdf [folder_name?: string] {
     if ($folder_name == null) {
-        cd (fd . --type directory -d 1 ~/.config/ ~/linux_projects/ | sk -1)
+        cd (fd . -H --type directory -d 1 ~/.config/ ~/linux_projects/ ~ | sk -1)
     } else {
-        cd (fd . --type directory -d 1 ~/.config/ ~/linux_projects/ | sk -1 -q $folder_name)
-    }
-}
-
-def-env cda [folder_name?: string] {
-    if ($folder_name == null) {
-        cd (fd . --type directory -H | sk)
-    } else {
-        cd (fd . --type directory -H | sk -q $folder_name)
+        cd (fd . -H --type directory -d 1 ~/.config/ ~/linux_projects/ ~ | sk -1 -q $folder_name)
     }
 }
 

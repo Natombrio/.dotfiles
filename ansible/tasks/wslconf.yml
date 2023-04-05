@@ -1,0 +1,20 @@
+---
+  - name: Install cargo packages
+    hosts: localhost
+    become: yes
+    become_user: root
+    connection: local
+    tasks:
+
+      - name: Create wsl.conf file
+        ansible.builtin.file:
+          path: /etc/wsl.conf
+          state: touch
+          mode: u=rw,g=r,o=r
+      
+      - name: Add lines to wsl.conf to disable windows path
+        ansible.builtin.blockinfile:
+          path: /etc/wsl.conf
+          block: |
+            [interop]
+            appendWindowsPath = false

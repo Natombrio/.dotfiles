@@ -1,0 +1,45 @@
+[directory]
+style = "blue bold"
+
+[package]
+disabled = true
+
+[hostname]
+disabled = true
+
+[aws]
+disabled = true
+
+[docker_context]
+disabled = true
+
+[git_branch]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_state]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true
+
+[cmd_duration]
+format = '\[[$duration]($style)\]'
+
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+

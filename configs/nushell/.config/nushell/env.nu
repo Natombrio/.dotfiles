@@ -67,10 +67,11 @@ let-env NU_PLUGIN_DIRS = [
 ### Custom additions ###
 ########################
 let-env RUSTC_WRAPPER = '~/.cargo/bin/sccache'
-let-env PATH = ($env.PATH | split row (char esep) | append '/home/pakke/.nix-profile/bin')
-let-env PATH = ($env.PATH | split row (char esep) | append '/home/pakke/.cargo/bin')
-let-env PATH = ($env.PATH | split row (char esep) | append '/home/pakke/.local/share/bob/nvim-bin')
-let-env PATH = ($env.PATH | split row (char esep) | append '/home/pakke/.local/bin/')
+let-env PATH = ($env.PATH | split row (char esep) | append '~/.nix-profile/bin')
+let-env PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
+let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/bob/nvim-bin')
+let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/bob/nightly/nvim-linux64/bin')
+let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/bin/')
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 

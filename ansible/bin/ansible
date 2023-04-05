@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+
+if ! [ -x "$(command -v ansible)" ]; then
+    sudo pacman --noconfirm -S ansible
+    sudo pacman --noconfirm -S ansible-core
+fi

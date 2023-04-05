@@ -1,0 +1,106 @@
+---
+  - name: Install packages from pacman
+    hosts: localhost
+    connection: local
+    tasks:
+
+      - name: Install clang
+        community.general.pacman:
+          name: clang
+          state: latest
+
+      - name: Install git
+        community.general.pacman:
+          name: git
+          state: latest
+
+      - name: Install openssh
+        community.general.pacman:
+          name: openssh
+          state: latest
+
+      - name: Install ripgrep
+        community.general.pacman:
+          name: ripgrep
+          state: latest
+
+      - name: Install pyright
+        community.general.pacman:
+          name: pyright
+          state: latest
+
+      - name: Install rustup
+        community.general.pacman:
+          name: rustup
+          state: latest
+
+      - name: Install pkgconf (needed for rust)
+        community.general.pacman:
+          name: pkgconf
+          state: latest
+
+      - name: Install man command
+        community.general.pacman:
+          name: man-db
+          state: latest
+
+      - name: Install tmux
+        community.general.pacman:
+          name: tmux
+          state: latest
+
+      - name: Install stow
+        community.general.pacman:
+          name: stow
+          state: latest
+
+      - name: Install nushell
+        community.general.pacman:
+          name: nushell
+          state: latest
+
+      - name: Install fd
+        community.general.pacman:
+          name: fd
+          state: latest
+
+      - name: Install bat
+        community.general.pacman:
+          name: bat
+          state: latest
+
+      - name: Install bacon
+        community.general.pacman:
+          name: bacon
+          state: latest
+
+      - name: Install skim
+        community.general.pacman:
+          name: skim
+          state: latest
+
+      - name: Install starship
+        community.general.pacman:
+          name: starship
+          state: latest
+
+      - name: Install base-devel (for yay)
+        community.general.pacman:
+          name: base-devel
+          state: latest
+
+      - name: Install make (for yay)
+        community.general.pacman:
+          name: make
+          state: latest
+
+      - name: Install npm
+        community.general.pacman:
+          name: npm
+          state: latest
+
+      - name: Install unzip
+        community.general.pacman:
+          name: unzip
+          state: latest
+
