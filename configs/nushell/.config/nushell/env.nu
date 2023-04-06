@@ -66,7 +66,7 @@ let-env NU_PLUGIN_DIRS = [
 ########################
 ### Custom additions ###
 ########################
-let-env RUSTC_WRAPPER = '~/.cargo/bin/sccache'
+let-env RUSTC_WRAPPER = $'($env.HOME)/.cargo/bin/sccache'
 let-env PATH = ($env.PATH | split row (char esep) | append '~/.nix-profile/bin')
 let-env PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
 let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/bob/nvim-bin')
