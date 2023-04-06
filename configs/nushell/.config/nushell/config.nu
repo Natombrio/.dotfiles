@@ -666,6 +666,7 @@ alias grep = rg
 source ~/.cache/starship/init.nu
 use ~/.config/nushell/completions/cargo-completion.nu *
 use ~/.config/nushell/completions/git-completion.nu *
+source ~/.zoxide.nu
 
 
 def-env ts [folder_name?: string] {

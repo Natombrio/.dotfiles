@@ -104,3 +104,8 @@
           name: unzip
           state: latest
 
+      - name: Install zoxide
+        community.general.pacman:
+          name: zoxide
+          state: latest
+

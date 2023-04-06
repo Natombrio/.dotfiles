@@ -74,6 +74,6 @@ let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/bob/n
 let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/bin/')
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
-
 let-env SKIM_DEFAULT_COMMAND = "fd"
+zoxide init nushell | save -f ~/.zoxide.nu
 
