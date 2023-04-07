@@ -309,8 +309,8 @@ let-env config = {
     abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
-    mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
-    index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
+    mode: compact # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+    index_mode: auto # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
     trim: {
       methodology: wrapping # wrapping or truncating
       wrapping_try_keep_words: true # A strategy used by the 'wrapping' methodology
@@ -319,7 +319,7 @@ let-env config = {
   }
 
   explore: {
-    help_banner: true
+    help_banner: false
     exit_esc: true
 
     command_bar_text: '#C4C9C6'
@@ -376,8 +376,8 @@ let-env config = {
   }
 
   history: {
-    max_size: 10000 # Session has to be reloaded for this to take effect
-    sync_on_enter: false # Enable to share history between multiple sessions, else you have to close the session to write history to file
+    max_size: 100000 # Session has to be reloaded for this to take effect
+    sync_on_enter: true # Enable to share history between multiple sessions, else you have to close the session to write history to file
     file_format: "plaintext" # "sqlite" or "plaintext"
   }
   completions: {
@@ -398,7 +398,7 @@ let-env config = {
   cursor_shape: {
     emacs: line # block, underscore, line (line is the default)
     vi_insert: block # block, underscore, line (block is the default)
-    vi_normal: underscore # block, underscore, line  (underscore is the default)
+    vi_normal: line # block, underscore, line  (underscore is the default)
   }
   color_config: $dark_theme   # if you want a light theme, replace `$dark_theme` to `$light_theme`
   use_grid_icons: true
@@ -406,7 +406,7 @@ let-env config = {
   float_precision: 2 # the precision for displaying floats in tables
   buffer_editor: "nvim" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
-  edit_mode: emacs # emacs, vi
+  edit_mode: vi # emacs, vi
   shell_integration: false # enables terminal markers and a workaround to arrow keys stop working issue
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
