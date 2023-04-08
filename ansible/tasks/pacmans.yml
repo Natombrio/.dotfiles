@@ -9,6 +9,7 @@
           update_cache: yes
           name: 
             - clang
+            - cmake
             - git
             - openssh
             - ripgrep
@@ -18,11 +19,12 @@
             - man-db
             - tmux
             - stow
-            - nushell
+            - fish
             - fd
             - bat
+            - exa
             - bacon
-            - skim
+            - fzf
             - starship
             - base-devel
             - make
@@ -30,4 +32,5 @@
             - unzip
             - zoxide
             - python-pip
+            - which
           state: latest
