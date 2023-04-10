@@ -2,18 +2,19 @@
   - name: Install cargo packages
     hosts: localhost
     connection: local
+    any_errors_fatal: true
     tasks:
 
-      - name: Run rustup
+      - name: Set rustup toolchain to nightly
         ansible.builtin.command: /usr/sbin/rustup default nightly
 
       - name: Install sccache
         community.general.cargo:
           name: sccache
-          state: present
+          state: latest
 
       - name: Install bob-nvim
         community.general.cargo:
           name: bob-nvim
-          state: present
+          state: latest
 
