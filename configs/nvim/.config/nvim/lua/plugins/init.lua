@@ -7,10 +7,6 @@ return {
     'ThePrimeagen/harpoon',
     -- Leap
     'ggandor/leap.nvim',
-    -- Github copilot
-    'github/copilot.vim',
-    -- Theme and Styling
-    'folke/tokyonight.nvim',
     -- Error display
     {
         "folke/trouble.nvim",
