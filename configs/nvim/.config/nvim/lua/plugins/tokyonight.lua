@@ -19,6 +19,10 @@ return {
                 highlights.LineNrAbove = {
                     fg = colors.blue,
                 }
+                highlights.Folded = {
+                    -- For nvim-ufo
+                    bg = "#1e2030",
+                }
             end,
         })
         vim.cmd("colorscheme tokyonight")
