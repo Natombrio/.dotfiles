@@ -2,7 +2,6 @@ return {
     -- Neovim libraries
     'nvim-lua/plenary.nvim',
     -- Utilities
-    'tpope/vim-fugitive',
     {"akinsho/toggleterm.nvim", version = '*', config = true},
     'ThePrimeagen/harpoon',
     -- Leap
@@ -62,7 +61,4 @@ return {
         end
 
     },
-    -- Language Specific Settings
-    ---- Rust
-    'simrat39/rust-tools.nvim',
 }
