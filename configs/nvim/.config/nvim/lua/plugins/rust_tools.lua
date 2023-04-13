@@ -1,5 +1,6 @@
 return {
     'simrat39/rust-tools.nvim',
+    ft = 'rust',
     config = function()
         local zero_lsp_server = require("lsp-zero").build_options("rust_analyzer", {
             settings = {
