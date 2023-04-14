@@ -88,18 +88,6 @@ return {
         end)
 
 
-        -- Lua Fix Undefined global 'vim'
-        lsp_zero.configure('lua-language-server', {
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { 'vim' },
-                    },
-                },
-            },
-        })
-
-
         -- Rust
         lsp_zero.skip_server_setup({ 'rust_analyzer' })
 
