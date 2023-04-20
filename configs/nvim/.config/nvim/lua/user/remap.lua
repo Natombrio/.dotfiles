@@ -1,11 +1,10 @@
 -- Editing and formatting
 vim.keymap.set('i','<C-a>', '<ESC>')
 vim.keymap.set('i','<C-BS>', '<C-W>')
-vim.keymap.set('i','<A-BS>', '<C-W>')
+vim.keymap.set({'i','c'},'<A-BS>', '<C-W>')
 vim.keymap.set('x','<leader>p', '\"_dP')
 vim.keymap.set('x','<leader>d', '\"_d')
 vim.keymap.set('n','<leader>ft', 'gg=G')
-vim.keymap.set('n','<C-c>', '<cmd>noh<CR>')
 vim.keymap.set('n','<C-d>', '<C-d>zz')
 vim.keymap.set('n','<C-u>', '<C-u>zz')
 vim.keymap.set('n','ä', ':')

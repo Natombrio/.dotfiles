@@ -75,7 +75,7 @@ return {
         })
 
         lsp_zero.on_attach(function(client, bufnr)
-            local opts = {buffer = bufnr, remap = false}
+            local opts = {buffer = bufnr, remap = false, silent = true}
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
             vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts) -- main info
             vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, opts)
