@@ -45,6 +45,7 @@ return {
             'eslint',
             'rust_analyzer',
             'pyright',
+            'lua_ls',
         })
 
 
@@ -52,6 +53,13 @@ return {
         local cmp = require('cmp')
 
         cmp.setup{
+            sources = {
+                {name = 'nvim_lsp'},
+                {name = 'buffer', max_item_count = 2},
+                {name = 'path'},
+                {name = 'luasnip'},
+                {name = 'nvim_lua'},
+            },
             experimental = {
                 ghost_text = true,
             },
