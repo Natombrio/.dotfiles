@@ -8,7 +8,7 @@ alias la "exa -la"
 alias vim "nvim"
 alias cat "bat"
 alias grep "rg"
-alias g "git"
+abbr g "git"
 abbr -a gf "git fetch --all"
 abbr -a gP "git push"
 abbr -a gp "git pull"
@@ -18,6 +18,7 @@ abbr -a gc "git commit -m"
 abbr -a ga "git add"
 abbr -a v "nvim"
 
+alias firefox "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 
 
 # Environment configuration
