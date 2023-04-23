@@ -104,6 +104,11 @@ return {
             force_setup = true,
         })
 
+        -- Typescript
+        lsp_zero.configure('eslint', {
+            vim.keymap.set("n", "<leader>ft", '<cmd>LspZeroFormat<CR>')
+        })
+
         -- run lsp
         lsp_zero.nvim_workspace()
         lsp_zero.setup()
