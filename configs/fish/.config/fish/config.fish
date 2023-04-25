@@ -3,8 +3,8 @@ set fish_greeting
 
 # Aliases
 alias ls "exa"
+alias l "exa -la"
 alias ll "exa -l"
-alias la "exa -la"
 alias vim "nvim"
 alias cat "bat"
 alias grep "rg"
@@ -12,13 +12,14 @@ abbr g "git"
 abbr -a gf "git fetch --all"
 abbr -a gP "git push"
 abbr -a gp "git pull"
+abbr -a gd "git diff"
 abbr -a gs "git status"
 abbr -a gco "git checkout"
 abbr -a gc "git commit -m"
 abbr -a ga "git add"
 abbr -a v "nvim"
 
-alias firefox "/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
+alias firefox "/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 
 
 # Environment configuration
