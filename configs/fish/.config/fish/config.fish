@@ -26,11 +26,13 @@ alias firefox "/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 set -x EDITOR nvim
 set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 set -x FZF_DEFAULT_COMMAND "fd"
+set -x DENO_INSTALL "~/.deno"
 
 # Paths
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.local/share/bob/nightly/nvim-linux64/bin/
 fish_add_path ~/.local/bin/
+fish_add_path ~/.deno/bin/
 
 # Programs
 ## Starship
