@@ -106,7 +106,12 @@ return {
 
         -- Typescript
         lsp_zero.configure('eslint', {
-            vim.keymap.set("n", "<leader>ft", '<cmd>LspZeroFormat<CR>')
+            on_attach = function(client, bufnr)
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    buffer = bufnr,
+                    command = "EslintFixAll",
+                })
+            end,
         })
 
         -- run lsp

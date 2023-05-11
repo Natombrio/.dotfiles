@@ -1,0 +1,21 @@
+theme = "base16_transparent"
+
+[editor]
+true-color = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal]
+X = "extend_line_above"
+"ä" = "command_mode"
+
+[keys.normal.g]
+G = "goto_file_end"
+
+[keys.insert]
+C-a = "normal_mode"
