@@ -40,4 +40,5 @@
             - zoxide
             - python-pip
             - which
+            - helix
           state: latest
