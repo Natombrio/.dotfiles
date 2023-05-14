@@ -4,6 +4,7 @@ local config = {}
 local unix_domain_name = 'WSL:Arch'
 local unix_username = 'pakke'
 local custom_font_name = 'RobotoMono NF'
+local bg_image_location = 'h://tools/WezTerm/bg.jpg'
 
 
 local wsl_domains = wezterm.default_wsl_domains()
@@ -30,7 +31,7 @@ config.color_scheme = 'tokyonight_storm'
 config.exit_behavior = 'Close'
 config.window_decorations = 'RESIZE'
 config.window_close_confirmation = 'NeverPrompt'
-config.window_background_image = 'bg.jpg'
+config.window_background_image = bg_image_location
 config.window_background_opacity = 1
 config.window_background_image_hsb = {
   brightness = 0.015,
