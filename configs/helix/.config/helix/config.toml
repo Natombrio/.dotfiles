@@ -1,14 +1,32 @@
 theme = "base16_transparent"
 
 [editor]
-true-color = true
+cursorcolumn = true
+cursorline = true
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+idle-timeout = 200
 line-number = "relative"
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.file-picker]
+hidden = false
+
 [editor.lsp]
-display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "workspace-diagnostics"]
+center = ["file-base-name", "file-modification-indicator"]
+right = ["diagnostics", "position"]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
+
+[keys.insert]
+C-a = "normal_mode"
 
 [keys.normal]
 X = "extend_line_above"
@@ -16,6 +34,3 @@ X = "extend_line_above"
 
 [keys.normal.g]
 G = "goto_file_end"
-
-[keys.insert]
-C-a = "normal_mode"
