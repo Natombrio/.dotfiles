@@ -18,6 +18,7 @@ abbr -a gco "git checkout"
 abbr -a gc "git commit -m"
 abbr -a ga "git add"
 abbr -a v "nvim"
+abbr -a h "helix"
 
 alias firefox "/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 
