@@ -21,7 +21,8 @@ end
 config.default_domain = unix_domain_name
 config.default_prog = {'powershell.exe'}
 config.wsl_domains = wsl_domains
-config.enable_tab_bar = true
+
+config.enable_tab_bar = false
 config.audible_bell = "Disabled"
 
 config.font = wezterm.font(custom_font_name)
