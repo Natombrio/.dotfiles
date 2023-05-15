@@ -17,6 +17,9 @@ abbr -a gs "git status"
 abbr -a gco "git checkout"
 abbr -a gc "git commit -m"
 abbr -a ga "git add"
+abbr -a gwl "git worktree list"
+abbr -a gwa "git worktree add"
+abbr -a gwr "git worktree remove"
 abbr -a v "nvim"
 abbr -a h "helix"
 
@@ -45,4 +48,7 @@ zoxide init fish | source
 
 ## SSH agent
 fish_ssh_agent
+
+## Pyenv
+pyenv init - | source
 
