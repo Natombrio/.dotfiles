@@ -21,7 +21,11 @@ abbr -a gwl "git worktree list"
 abbr -a gwa "git worktree add"
 abbr -a gwr "git worktree remove"
 abbr -a v "nvim"
-abbr -a h "helix"
+if type -q helix
+    abbr -a h "helix"
+else if type -q hx
+    abbr -a h "hx"
+end
 
 alias firefox "/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 
