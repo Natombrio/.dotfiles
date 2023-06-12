@@ -9,6 +9,7 @@ alias vim nvim
 alias cat bat
 alias grep rg
 abbr g git
+abbr -a c cat
 abbr -a gf "git fetch --all"
 abbr -a gP "git push"
 abbr -a gp "git pull"
@@ -21,24 +22,18 @@ abbr -a gwl "git worktree list"
 abbr -a gwa "git worktree add"
 abbr -a gwr "git worktree remove"
 abbr -a v nvim
-if type -q helix
-    abbr -a h helix
-else if type -q hx
-    abbr -a h hx
-end
+abbr -a v nvim
 
 
 # Environment configuration
 set -x EDITOR nvim
 set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 set -x FZF_DEFAULT_COMMAND fd
-set -x DENO_INSTALL "~/.deno"
 
 # Paths
 fish_add_path ~/.cargo/bin
 fish_add_path ~/.local/share/bob/nightly/nvim-linux64/bin/
 fish_add_path ~/.local/bin/
-fish_add_path ~/.deno/bin/
 
 # Programs
 ## Starship
