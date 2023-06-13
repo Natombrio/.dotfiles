@@ -2,6 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
+    vscode = false,
     opts = {
       transparent = true,
       styles = {
