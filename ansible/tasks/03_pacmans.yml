@@ -24,7 +24,6 @@
             - rustup
             - pkgconf
             - man-db
-            - tmux
             - stow
             - fish
             - fd
@@ -40,5 +39,4 @@
             - zoxide
             - python-pip
             - which
-            - helix
           state: latest
