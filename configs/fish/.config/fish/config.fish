@@ -14,6 +14,7 @@ abbr -a gf "git fetch --all"
 abbr -a gP "git push"
 abbr -a gp "git pull"
 abbr -a gd "git diff"
+abbr -a gl "git log"
 abbr -a gs "git status"
 abbr -a gco "git checkout"
 abbr -a gc "git commit -m"
@@ -37,14 +38,20 @@ fish_add_path ~/.local/bin/
 
 # Programs
 ## Starship
-mkdir -p ~/.cache/starship/
-starship init fish | source
+if type -q starship
+    mkdir -p ~/.cache/starship/
+    starship init fish | source
+end
 
 ## Zoxide
-zoxide init fish | source
+if type -q zoxide
+    zoxide init fish | source
+end
 
 ## SSH agent
 fish_ssh_agent
 
 ## Pyenv
-pyenv init - | source
+if type -q starship
+    pyenv init - | source
+end
