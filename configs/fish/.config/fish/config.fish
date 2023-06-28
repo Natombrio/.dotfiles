@@ -23,7 +23,6 @@ abbr -a gwl "git worktree list"
 abbr -a gwa "git worktree add"
 abbr -a gwr "git worktree remove"
 abbr -a v nvim
-abbr -a v nvim
 
 
 # Environment configuration
