@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   home = {
+    username = "pakke";
     homeDirectory = "/home/pakke";
 
     packages = with pkgs; [
@@ -20,14 +23,9 @@
       zoxide
     ];
 
-    stateVersion = "22.11";
-    username = "pakke";
+    stateVersion = "23.05";
   };
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowUnfreePredicate = _: true;
-  };
-
+  nixpkgs.config.allowUnfree = true;
   programs.home-manager.enable = true;
 }
