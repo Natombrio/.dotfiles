@@ -16,12 +16,27 @@
     in
     {
       defaultPackage.${system} = home-manager.defaultPackage.${system};
-      homeConfigurations.pakke = home-manager.lib.homeManagerConfiguration {
+      nixpkgs.config.allowUnfree = true;
+      homeConfigurations.home = home-manager.lib.homeManagerConfiguration {
+        home.username = "pakke";
+        home.homeDirectory = "/home/pakke";
+
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [
-          ./home.nix
+          ./cli.nix
         ];
       };
+      homeConfigurations.work = home-manager.lib.homeManagerConfiguration {
+        home.username = "patrik";
+        home.homeDirectory = "/home/patrik";
+
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [
+          ./cli.nix
+        ];
+      };
+      programs.home-manager.enable = true;
+      stateVersion = "23.05";
     };
 }
 
