@@ -7,7 +7,6 @@ alias l "exa -la"
 alias ll "exa -l"
 alias vim nvim
 alias cat bat
-alias grep rg
 abbr g git
 abbr -a c cat
 abbr -a gf "git fetch --all"
@@ -29,6 +28,10 @@ abbr -a v nvim
 set -x EDITOR nvim
 set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 set -x FZF_DEFAULT_COMMAND fd
+set -x WINEPREFIX /home/natombrio/.wine
+if type -q device_specific
+	device_specific
+end
 
 # Paths
 fish_add_path ~/.cargo/bin
@@ -51,6 +54,6 @@ end
 fish_ssh_agent
 
 ## Pyenv
-if type -q starship
+if type -q pyenv
     pyenv init - | source
 end
