@@ -1,6 +1,15 @@
 return {
-  "folke/flash.nvim",
-  keys = {
-    { "/", false },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        search = {
+          enabled = false,
+        },
+        char = {
+          enabled = false,
+        },
+      },
+    },
   },
 }
