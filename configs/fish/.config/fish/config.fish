@@ -5,7 +5,6 @@ set fish_greeting
 alias ls exa
 alias l "exa -la"
 alias ll "exa -l"
-alias vim nvim
 alias cat bat
 abbr g git
 abbr -a c cat
@@ -22,6 +21,7 @@ abbr -a gwl "git worktree list"
 abbr -a gwa "git worktree add"
 abbr -a gwr "git worktree remove"
 abbr -a v nvim
+abbr -a vc "nvim --clean -b -n"
 
 
 # Environment configuration
@@ -30,7 +30,7 @@ set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 set -x FZF_DEFAULT_COMMAND fd
 set -x WINEPREFIX /home/natombrio/.wine
 if type -q device_specific
-	device_specific
+    device_specific
 end
 
 # Paths
@@ -57,3 +57,7 @@ fish_ssh_agent
 if type -q pyenv
     pyenv init - | source
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
