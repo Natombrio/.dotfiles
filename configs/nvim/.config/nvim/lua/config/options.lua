@@ -4,3 +4,5 @@
 require("vim.lsp._watchfiles")._watchfunc = function(_, _, _)
   return true
 end
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
