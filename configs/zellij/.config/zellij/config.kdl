@@ -4,7 +4,7 @@ keybinds clear-defaults=true {
         bind "Ctrl a" { SwitchToMode "Normal"; }
     }
     resize {
-        bind "Ctrl r" { SwitchToMode "Normal"; }
+        bind "Ctrl n" { SwitchToMode "Normal"; }
         bind "h" { Resize "Increase Left"; }
         bind "j" { Resize "Increase Down"; }
         bind "k" { Resize "Increase Up"; }
@@ -26,9 +26,8 @@ keybinds clear-defaults=true {
         bind "n" { NewPane; SwitchToMode "Normal"; SwitchToMode "Locked"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "w" "Ctrl w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
-        bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
     move {
         bind "Ctrl h" { SwitchToMode "Normal"; }
@@ -96,10 +95,6 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
     }
-    renamepane {
-        bind "Ctrl c" { SwitchToMode "Normal"; }
-        bind "Esc" { UndoRenamePane; SwitchToMode "Locked"; }
-    }
     session {
         bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "d" { Detach; }
@@ -112,8 +107,7 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Ctrl a" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Detach; }
+        bind "Ctrl a" "Esc" { SwitchToMode "Locked"; }
         bind "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt Right" { MoveFocusOrTab "Right"; }
         bind "Alt Down" { MoveFocus "Down"; }
@@ -147,6 +141,7 @@ keybinds clear-defaults=true {
     }
     shared {
         bind "Ctrl a" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Detach; }
     }
 }
 
