@@ -7,6 +7,7 @@ alias l "exa -la"
 alias ll "exa -l"
 alias cat bat
 alias v nvim
+alias z zellij
 abbr -a v nvim
 abbr g git
 abbr -a c cat
