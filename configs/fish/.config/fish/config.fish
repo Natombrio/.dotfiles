@@ -11,6 +11,7 @@ alias z zellij
 alias zl "zellij ls -n | grep -v EXITED | awk '{print \$1}'"
 alias zla "zellij ls"
 alias za "zellij attach (zl | fzf)"
+alias zrf "zellij run --floating -- "
 abbr -a v nvim
 abbr g git
 abbr -a c cat
