@@ -25,7 +25,7 @@ keybinds clear-defaults=true {
         bind "p" { SwitchFocus; }
         bind "n" "Ctrl n" { NewPane; SwitchToMode "Locked"; }
         bind "x" { CloseFocus; SwitchToMode "Locked"; }
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
+        bind "f" "Ctrl f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "w" "Ctrl w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
     }
@@ -155,7 +155,7 @@ plugins {
 
 pane_frames false
 theme "tokyo-night-storm"
-// default_layout "compact"
+default_layout "compact"
 default_mode "locked"
 
 mouse_mode false
