@@ -32,7 +32,6 @@ abbr -a vc "nvim --clean -b -n"
 
 # Environment configuration
 set -x EDITOR nvim
-set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 set -x FZF_DEFAULT_COMMAND fd
 set -x WINEPREFIX /home/natombrio/.wine
 if type -q device_specific
@@ -62,6 +61,11 @@ fish_ssh_agent
 ## Pyenv
 if type -q pyenv
     pyenv init - | source
+end
+
+## Sccache
+if type -q sccache
+    set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 end
 
 # bun
