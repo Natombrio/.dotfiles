@@ -14,7 +14,6 @@ alias za "zellij attach (zl | fzf)"
 alias zrf "zellij run --floating -- "
 abbr -a v nvim
 abbr g git
-abbr -a c cat
 abbr -a gf "git fetch --all"
 abbr -a gP "git push"
 abbr -a gp "git pull"
@@ -33,17 +32,18 @@ abbr -a vc "nvim --clean -b -n"
 # Environment configuration
 set -x EDITOR nvim
 set -x FZF_DEFAULT_COMMAND fd
-set -x WINEPREFIX /home/natombrio/.wine
+set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 if type -q device_specific
     device_specific
 end
 
 # Paths
-fish_add_path ~/.cargo/bin
-fish_add_path ~/.local/share/bob/nightly/nvim-linux64/bin/
 fish_add_path ~/.local/bin/
 
 # Programs
+## SSH agent
+fish_ssh_agent
+
 ## Starship
 if type -q starship
     mkdir -p ~/.cache/starship/
@@ -55,19 +55,26 @@ if type -q zoxide
     zoxide init --cmd cd fish | source
 end
 
-## SSH agent
-fish_ssh_agent
+if type -q wine
+    set -x WINEPREFIX /home/natombrio/.wine
+end
 
 ## Pyenv
 if type -q pyenv
     pyenv init - | source
 end
 
+## cargo
+if type -q cargo
+    fish_add_path ~/.cargo/bin
+end
 ## Sccache
 if type -q sccache
     set -x RUSTC_WRAPPER ~/.cargo/bin/sccache
 end
 
 # bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+if type -q bun
+    set -x BUN_INSTALL "$HOME/.bun"
+    set -x PATH $BUN_INSTALL/bin $PATH
+end
