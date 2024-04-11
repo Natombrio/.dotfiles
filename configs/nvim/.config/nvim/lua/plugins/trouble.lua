@@ -10,10 +10,11 @@ return {
                     hint = "H",
                     information = "I",
                 },
+                mode = "workspace_diagnostics",
             })
 
-            vim.keymap.set("n", "<leader>tt", function()
-                require("trouble").toggle()
+            vim.keymap.set("n", "<leader>t", function()
+                require("trouble").toggle("workspace_diagnostics")
             end)
 
             vim.keymap.set("n", "gr", function()
