@@ -11,6 +11,10 @@ return {
                     information = "I",
                 },
                 mode = "workspace_diagnostics",
+                auto_close = true,
+                auto_jump = {"lsp_references", "lsp_definitions"},
+                include_declaration = { "lsp_definitions", "lsp_implementations" },
+
             })
 
             vim.keymap.set("n", "<leader>t", function()
