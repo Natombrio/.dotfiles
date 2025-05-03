@@ -7,11 +7,6 @@ alias l "exa -la"
 alias ll "exa -l"
 alias cat bat
 alias v nvim
-alias z zellij
-alias zl "zellij ls -n | grep -v EXITED | awk '{print \$1}'"
-alias zla "zellij ls"
-alias za "zellij attach (zl | fzf)"
-alias zrf "zellij run --floating -- "
 abbr -a v nvim
 abbr g git
 abbr -a gf "git fetch --all"
@@ -43,6 +38,7 @@ fish_add_path ~/.local/bin/
 # Programs
 ## SSH agent
 fish_ssh_agent
+
 
 ## Starship
 if type -q starship

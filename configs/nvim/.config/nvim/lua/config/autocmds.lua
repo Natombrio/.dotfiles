@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+vim.filetype.add({
+  extension = {
+    -- Map the .rpy extension to the 'renpy' filetype
+    rpy = 'renpy',
+  },
+})
+
 local augroup = vim.api.nvim_create_augroup
 local NatombrioGroup = augroup('Natombrio', {})
 
