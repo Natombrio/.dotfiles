@@ -7,7 +7,7 @@
     >[interop]
     >appendWindowsPath=false
     >```
-    
+
     [Source](https://learn.microsoft.com/en-us/windows/wsl/release-notes#build-17713)
 - Install new versions of [node](https://github.com/nodesource/distributions/blob/master/README.md#debinstall), git, (gcc | clang), python, rustup,
     rg (ripgrep)
@@ -26,3 +26,14 @@
     - starship
     - Bacon (for rust dev.)
 
+## Dotfile sync using stow
+
+Common packages
+```bash
+stow common
+```
+
+Hyprland/Desktop specific
+```bash
+stow common; stow hyprland;
+```
