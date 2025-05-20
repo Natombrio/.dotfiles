@@ -1,0 +1,276 @@
+{
+	// Robotcode
+	"robotcode.debug.attachPython": true,
+	// Editor
+	"editor.formatOnSaveMode": "file",
+	"editor.formatOnSave": true,
+	"python.interpreter.infoVisibility": "always",
+	"telemetry.telemetryLevel": "off",
+	"update.mode": "default",
+	"update.enableWindowsBackgroundUpdates": false,
+	"gitlens.currentLine.enabled": false,
+	"gitlens.hovers.currentLine.over": "line",
+	"gitlens.codeLens.enabled": false,
+	"gitlens.statusBar.enabled": false,
+	"workbench.activityBar.location": "hidden",
+	"editor.minimap.enabled": false,
+	"editor.suggest.insertMode": "replace",
+	"editor.linkedEditing": true,
+	"zenMode.hideLineNumbers": false,
+	"editor.lineNumbers": "relative",
+	"vim.leader": "<Space>",
+	"vim.hlsearch": false,
+	"vim.useSystemClipboard": true,
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"[",
+				"d"
+			],
+			"commands": [
+				"editor.action.marker.prev"
+			]
+		},
+		{
+			"before": [
+				"]",
+				"d"
+			],
+			"commands": [
+				"editor.action.marker.next"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"c",
+				"a"
+			],
+			"commands": [
+				"editor.action.quickFix"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"f"
+			],
+			"commands": [
+				"workbench.action.quickOpen"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"h"
+			],
+			"commands": [
+				"editor.action.showDefinitionPreviewHover"
+			]
+		},
+		{
+			"before": [
+				"g",
+				"d"
+			],
+			"commands": [
+				"editor.action.revealDefinition"
+			]
+		},
+		{
+			"before": [
+				"leader",
+				"c",
+				"r"
+			],
+			"commands": [
+				"editor.action.rename"
+			]
+		}
+	],
+	"vim.visualModeKeyBindings": [
+		// Stay in visual mode while indenting
+		{
+			"before": [
+				"<"
+			],
+			"commands": [
+				"editor.action.outdentLines"
+			]
+		},
+		{
+			"before": [
+				">"
+			],
+			"commands": [
+				"editor.action.indentLines"
+			]
+		},
+		// Move selected lines while staying in visual mode
+		{
+			"before": [
+				"J"
+			],
+			"commands": [
+				"editor.action.moveLinesDownAction"
+			]
+		},
+		{
+			"before": [
+				"K"
+			],
+			"commands": [
+				"editor.action.moveLinesUpAction"
+			]
+		},
+	],
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "entity.name.function.testcase.name.robotframework",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#a0733f"
+				}
+			},
+			{
+				"scope": "entity.name.function.keyword.name.robotframework",
+				"settings": {
+					"fontStyle": "bold",
+					"foreground": "#eea34c"
+				}
+			},
+		]
+	},
+	"editor.semanticTokenColorCustomizations": {
+		"rules": {
+			"*.documentation:robotframework": {
+				"fontStyle": "italic",
+				"foreground": "#aaaaaa"
+			},
+		}
+	},
+	"security.workspace.trust.untrustedFiles": "open",
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"python.languageServer": "Pylance",
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"python.analysis.inlayHints.variableTypes": true,
+	"python.analysis.typeCheckingMode": "strict",
+	"python.analysis.stubPath": "",
+	"python.analysis.inlayHints.callArgumentNames": "partial",
+	"python.analysis.include": [
+		"Libraries/*"
+	],
+	"editor.accessibilitySupport": "on",
+	"accessibility.signals.lineHasBreakpoint": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.chatEditModifiedFile": {
+		"sound": "off"
+	},
+	"accessibility.signals.chatRequestSent": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.chatResponseReceived": {
+		"sound": "off"
+	},
+	"accessibility.signals.clear": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.codeActionApplied": {
+		"sound": "off"
+	},
+	"accessibility.signals.codeActionTriggered": {
+		"sound": "off"
+	},
+	"accessibility.signals.onDebugBreak": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.diffLineDeleted": {
+		"sound": "off"
+	},
+	"accessibility.signals.diffLineInserted": {
+		"sound": "off"
+	},
+	"accessibility.signals.diffLineModified": {
+		"sound": "off"
+	},
+	"accessibility.signals.positionHasError": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.lineHasError": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.lineHasFoldedArea": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.lineHasInlineSuggestion": {
+		"sound": "off"
+	},
+	"accessibility.signals.noInlayHints": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.notebookCellCompleted": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.notebookCellFailed": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.progress": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.taskCompleted": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.taskFailed": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.terminalBell": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.terminalCommandFailed": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.terminalCommandSucceeded": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.terminalQuickFix": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.voiceRecordingStarted": {
+		"sound": "off"
+	},
+	"accessibility.signals.voiceRecordingStopped": {
+		"sound": "off"
+	},
+	"accessibility.signals.positionHasWarning": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+	"accessibility.signals.lineHasWarning": {
+		"sound": "off",
+		"announcement": "auto"
+	},
+}
