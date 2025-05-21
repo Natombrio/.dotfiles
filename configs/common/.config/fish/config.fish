@@ -26,7 +26,7 @@ abbr -a vc "nvim --cmd 'syntax off'"
 
 # Environment configuration
 set -x EDITOR nvim
-set -x FZF_DEFAULT_COMMAND fd
+set -x FZF_DEFAULT_COMMAND fd --hidden
 set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 if type -q device_specific
     device_specific
