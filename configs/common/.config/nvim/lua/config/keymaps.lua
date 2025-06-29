@@ -12,3 +12,5 @@ vim.keymap.set("i", "{<CR>", "{<CR>}<Esc>O", { desc = "Autofill and indent {}" }
 vim.keymap.set("i", "(<CR>", "(<CR>)<Esc>O", { desc = "Autofill and indent ()" })
 vim.keymap.set("i", "[<CR>", "[<CR>]<Esc>O", { desc = "Autofill and indent []" })
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = "autofill error" })
+vim.keymap.set("n", "<C-S-j>", ":cnext<CR>", { desc = "Go to next in quickfix" })
+vim.keymap.set("n", "<C-S-k>", ":cprevious<CR>", { desc = "Go to previous in quickfix" })
