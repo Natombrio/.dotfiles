@@ -9,12 +9,16 @@ keybind = ctrl+shift+i=inspector:toggle
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+shift+j=unbind
+keybind = shift+bracket_right=text:`
+keybind = bracket_right=text:´
+keybind = shift+backslash=text:^
+keybind = backslash=text:~
+
 
 shell-integration = fish
 gtk-single-instance = false
 gtk-titlebar = false
 gtk-tabs-location = bottom
-gtk-adwaita = false
 quick-terminal-animation-duration = 0
 resize-overlay = never
 quit-after-last-window-closed = false
