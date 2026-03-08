@@ -33,23 +33,26 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({"BufWritePre"}, {
-    group = NatombrioGroup,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-})
-
 autocmd('LspAttach', {
     group = NatombrioGroup,
     callback = function(e)
         local opts = { buffer = e.buf }
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-        vim.keymap.set("n", "gh", function() vim.lsp.buf.hover() end, opts)
-        vim.keymap.set("n", "<leader>cz", function() vim.lsp.buf.format() end, opts)
-        vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-        vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end, opts)
-        vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+        vim.keymap.set("n", "grd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "grh", function() vim.lsp.buf.hover() end, opts)
+        vim.keymap.set("n", "grr", function() vim.lsp.buf.references() end, opts)
+        vim.keymap.set("n", "grz", function() vim.lsp.buf.format() end, opts)
+        vim.keymap.set("n", "gra", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "grn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
+        -- format on save in python
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = NatombrioGroup,
+            callback = function()
+                if vim.b.current_syntax == 'python' then
+                    vim.lsp.buf.format({ async = true })
+                end
+            end,
+        })
     end
 })

@@ -1,13 +1,11 @@
 return {
     {
-    "nvim-telescope/telescope.nvim", tag = "0.1.5",
+    "nvim-telescope/telescope.nvim", version = "*",
     dependencies = { "nvim-lua/plenary.nvim", },
 
     config = function()
         require('telescope').setup()
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<C-S-F>', builtin.find_files, {})
-        vim.keymap.set('n', '<C-S-G>', builtin.live_grep, {})
         vim.keymap.set('n', '<C-p>', builtin.builtin, {})
     end,
     }
