@@ -1,4 +1,7 @@
 plugin/packer_compiled.lua
 configs/nvim/.config/nvim/lazy-lock.json
+configs/common/.config/fish/completions
+configs/common/.config/fish/conf.d
+configs/common/.config/fish/functions/*.fish
 fish_variables
 device_specific.fish
