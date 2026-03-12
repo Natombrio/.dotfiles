@@ -45,14 +45,6 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "grn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
-        -- format on save in python
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = NatombrioGroup,
-            callback = function()
-                if vim.b.current_syntax == 'python' then
-                    vim.lsp.buf.format({ async = true })
-                end
-            end,
-        })
+        vim.keymap.set("n", "gfm", function() vim.lsp.buf.format() end, opts)
     end
 })
