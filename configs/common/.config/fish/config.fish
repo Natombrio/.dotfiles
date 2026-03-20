@@ -74,3 +74,9 @@ if type -q bun
     set -x BUN_INSTALL "$HOME/.bun"
     set -x PATH $BUN_INSTALL/bin $PATH
 end
+
+if type -q fzf
+    bind ctrl-shift-f 'set -l target (fd --hidden -t d | fzf); test -n "$target" && cd $target; commandline -f repaint'
+    bind ctrl-f 'set -l file (fd --hidden -t f | fzf); test -n "$file" && nvim $file; commandline -f repaint'
+    bind ctrl-shift-g 'nvim -c "lua require(\'snacks\'); Snacks.picker.grep()"'
+end
