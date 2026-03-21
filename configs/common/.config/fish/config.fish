@@ -6,30 +6,19 @@ alias ls exa
 alias l "exa -la"
 alias ll "exa -l"
 alias cat bat
-alias v nvim
 abbr -a v nvim
-abbr g git
-abbr -a gf "git fetch --all"
-abbr -a gP "git push"
-abbr -a gp "git pull"
-abbr -a gd "git diff"
-abbr -a gl "git log"
-abbr -a gs "git status"
-abbr -a gco "git checkout"
-abbr -a gcm "git commit -m"
-abbr -a ga "git add"
-abbr -a gwl "git worktree list"
-abbr -a gwa "git worktree add"
-abbr -a gwr "git worktree remove"
-abbr -a vc "nvim --cmd 'syntax off'"
 
 
 # Environment configuration
 set -x EDITOR nvim
-set -x FZF_DEFAULT_COMMAND fd --hidden
+set -x FZF_DEFAULT_COMMAND fd --hidden --follow --exclude .git
 set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
 if type -q device_specific
     device_specific
+end
+
+if status is-interactive
+    tv init fish | source
 end
 
 # Paths
@@ -48,7 +37,7 @@ end
 
 ## Zoxide
 if type -q zoxide
-    zoxide init --cmd cd fish | source
+    zoxide init fish | source
 end
 
 if type -q wine
@@ -73,10 +62,4 @@ end
 if type -q bun
     set -x BUN_INSTALL "$HOME/.bun"
     set -x PATH $BUN_INSTALL/bin $PATH
-end
-
-if type -q fzf
-    bind ctrl-shift-f 'set -l target (fd --hidden -t d | fzf); test -n "$target" && cd $target; commandline -f repaint'
-    bind ctrl-f 'set -l file (fd --hidden -t f | fzf); test -n "$file" && nvim $file; commandline -f repaint'
-    bind ctrl-shift-g 'nvim -c "lua require(\'snacks\'); Snacks.picker.grep()"'
 end
