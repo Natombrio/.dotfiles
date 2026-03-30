@@ -2,8 +2,12 @@ return {
     {
         "folke/snacks.nvim",
         ---@type snacks.Config
+        lazy = false,
         opts = {
-            picker = {}
+            picker = {},
+            bigfile = {
+                notify = true,
+            },
         },
         keys = {
             { "<C-S-f>", function() Snacks.picker.files() end, desc = "Find Files" },

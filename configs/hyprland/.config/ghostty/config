@@ -3,6 +3,7 @@ background-opacity = 0.90
 background = 000000
 font-family = RobotoMono Nerd Font
 font-size = 14
+scrollback-limit = 1000000
 
 keybind = clear
 keybind = ctrl+shift+,=reload_config
@@ -21,7 +22,7 @@ keybind = ctrl+shift+p=toggle_command_palette
 keybind = ctrl+shift+enter=toggle_split_zoom
 
 
-shell-integration = fish
+shell-integration = none
 gtk-single-instance = false
 gtk-titlebar = false
 gtk-tabs-location = bottom

@@ -18,7 +18,7 @@ if type -q device_specific
 end
 
 if status is-interactive
-    tv init fish | source
+    atuin init fish | source
 end
 
 # Paths
@@ -38,6 +38,9 @@ end
 ## Zoxide
 if type -q zoxide
     zoxide init fish | source
+    bind ctrl-z 'cd (tv zoxide --height 20 --layout portrait)' repaint
+    bind ctrl-shift-g 'tv text' repaint
+    bind ctrl-shift-f 'tv files' repaint
 end
 
 if type -q wine
@@ -62,4 +65,8 @@ end
 if type -q bun
     set -x BUN_INSTALL "$HOME/.bun"
     set -x PATH $BUN_INSTALL/bin $PATH
+end
+
+if type -q zmx
+    zmx completions fish | source
 end

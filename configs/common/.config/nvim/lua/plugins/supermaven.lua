@@ -8,6 +8,7 @@ return {
                     accept_suggestion = "<A-,>",
                     clear_suggestion = "<A-.>",
                 },
+                ignore_filetypes = { "bigfile", "snacks_input", "snacks_notif"},
             })
         end,
     },
