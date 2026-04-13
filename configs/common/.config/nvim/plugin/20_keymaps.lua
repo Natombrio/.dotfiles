@@ -9,3 +9,4 @@ vim.keymap.set("n", "<C-S-j>", ":cnext<CR>", { desc = "Go to next in quickfix" }
 vim.keymap.set("n", "<C-S-k>", ":cprevious<CR>", { desc = "Go to previous in quickfix" })
 vim.keymap.set("n", "<C-S-l>", ":lnext<CR>", { desc = "Go to next in quickfix" })
 vim.keymap.set("n", "<C-S-h>", ":lprevious<CR>", { desc = "Go to previous in quickfix" })
+

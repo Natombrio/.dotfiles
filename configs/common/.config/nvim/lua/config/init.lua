@@ -1,5 +1,0 @@
-require("config.autocmds")
-require("config.options")
-require("config.keymaps")
-require("config.lspconfig")
-require("config.lazy_init")
