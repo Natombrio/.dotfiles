@@ -29,9 +29,22 @@ require("mini.completion").setup({
     },
 })
 require("mini.extra").setup()
-require("mini.pick").setup()
+require("mini.pick").setup({
+    mappings = {
+        to_qf = {
+            char = "<C-q>",
+            func = function()
+                local matches = MiniPick.get_picker_matches()
+                if #matches.all > 0 then
+                    MiniPick.default_choose_marked(matches.all)
+                end
+            end,
+        },
+    },
+})
 vim.keymap.set("n", "<C-S-f>", MiniPick.builtin.files)
 vim.keymap.set("n", "<C-S-g>", MiniPick.builtin.grep_live)
+---- mini picker picker
 MiniPick.registry.registry = function()
     local items = vim.tbl_keys(MiniPick.registry)
     table.sort(items)
