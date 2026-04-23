@@ -8,9 +8,9 @@ local lsps = {
         },
     },
     {
-        "ty",
+        "zuban",
         {
-            cmd = { "uv", "run", "ty", "server" },
+            cmd = { "uv", "run", "zuban", "server" },
             root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
             filetypes = { "python" },
         },
