@@ -1,11 +1,10 @@
-local add = vim.pack.add
-
-add({
+vim.pack.add({
     "https://github.com/folke/tokyonight.nvim",
     "https://github.com/nvim-mini/mini.nvim",
     "https://github.com/supermaven-inc/supermaven-nvim",
     "https://github.com/nvim-treesitter/nvim-treesitter",
     "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
+    "https://github.com/neovim/nvim-lspconfig",
 })
 
 -- colorscheme
@@ -22,7 +21,7 @@ vim.cmd.colorscheme("tokyonight-storm")
 require("mini.icons").setup()
 MiniIcons.tweak_lsp_kind("replace")
 require("mini.completion").setup({
-    lsp_completion = { source_func = 'omnifunc', auto_setup = true, process_items = process_items },
+    lsp_completion = { source_func = "omnifunc", auto_setup = true, process_items = process_items },
     window = {
         info = { height = 25, width = 80, border = "single" },
         signature = { height = 25, width = 80, border = "single" },
@@ -51,8 +50,10 @@ MiniPick.registry.registry = function()
     MiniPick.start({
         source = {
             items = items,
-            name = 'Registry',
-            choose = function(item) MiniPick.registry[item]() end,
+            name = "Registry",
+            choose = function(item)
+                MiniPick.registry[item]()
+            end,
         },
     })
 end
@@ -65,7 +66,7 @@ require("supermaven-nvim").setup({
         accept_suggestion = "<A-,>",
         clear_suggestion = "<A-.>",
     },
-    ignore_filetypes = { "bigfile" }
+    ignore_filetypes = { "bigfile" },
 })
 
 -- treesitter
@@ -74,4 +75,3 @@ require("nvim-treesitter").setup()
 -- inline diagnostic
 require("tiny-inline-diagnostic").setup()
 vim.diagnostic.config({ virtual_text = false })
-
