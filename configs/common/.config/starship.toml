@@ -43,3 +43,7 @@ format = '\[[$symbol($version)]($style)\]'
 [username]
 format = '\[[$user]($style)\]'
 
+[env_var.ZMX_SESSION]
+variable = "ZMX_SESSION"
+format = '\[[$env_value](#909090)\]'
+

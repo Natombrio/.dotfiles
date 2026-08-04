@@ -36,7 +36,21 @@ vim.g.netrw_winsize = 25
 
 vim.cmd.packadd("cfilter")
 vim.cmd.packadd("nohlsearch")
-require('vim._core.ui2').enable()
+require("vim._core.ui2").enable()
+
+-- Disable syntax highlighting for large files to avoid E363 errors
+local large_file_group = vim.api.nvim_create_augroup("LargeFile", { clear = true })
+vim.api.nvim_create_autocmd({ "BufRead" }, {
+    group = large_file_group,
+    callback = function(args)
+        local filesize = vim.fn.getfsize(vim.fn.fnamemodify(args.file, ":p"))
+        -- Disable syntax for files larger than 1MB
+        if filesize > 1048576 then
+            vim.bo[args.buf].syntax = "off"
+            vim.cmd("redraw!")
+        end
+    end,
+})
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = { "robot", "resource" },
@@ -92,13 +106,43 @@ autocmd("LspAttach", {
             vim.lsp.buf.rename()
         end, opts)
         vim.keymap.set("n", "[d", function()
-            vim.diagnostic.jump({count=-1})
+            vim.diagnostic.jump({ count = -1 })
         end, opts)
         vim.keymap.set("n", "]d", function()
-            vim.diagnostic.jump({count=1})
+            vim.diagnostic.jump({ count = 1 })
         end, opts)
         vim.keymap.set("n", "gfm", function()
             vim.lsp.buf.format()
         end, opts)
     end,
 })
+
+local follow_augroup = vim.api.nvim_create_augroup("FileFollow", { clear = true })
+local _follow_enabled = false
+
+local function set_follow(state)
+    _follow_enabled = state
+    if state then
+        vim.o.updatetime = 2000 -- Lower default (4000) so it fires faster
+        vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+            group = follow_augroup,
+            callback = function(args)
+                if not vim.bo[args.buf].readonly then
+                    vim.cmd.checktime()
+                end
+            end,
+        })
+        vim.notify("Auto-reload enabled", vim.log.levels.INFO)
+    else
+        vim.api.nvim_clear_autocmds({ group = follow_augroup })
+        vim.notify("Auto-reload disabled", vim.log.levels.WARN)
+    end
+end
+
+vim.api.nvim_create_user_command("Follow", function(args)
+    if args.bang then
+        set_follow(false)
+    else
+        set_follow(not _follow_enabled)
+    end
+end, { bang = true, desc = "Toggle auto-reload on external file changes" })

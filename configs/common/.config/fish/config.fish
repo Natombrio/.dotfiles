@@ -5,6 +5,13 @@ set fish_greeting
 alias ls exa
 alias l "exa -la"
 alias ll "exa -l"
+alias gs "git status"
+alias glo "git log"
+alias ga "git add"
+alias gcom "git commit"
+alias greb "git rebase"
+alias gP "git push"
+alias gp "git pull"
 alias cat bat
 abbr -a v nvim
 
@@ -13,12 +20,15 @@ abbr -a v nvim
 set -x EDITOR nvim
 set -x FZF_DEFAULT_COMMAND fd --hidden --follow --exclude .git
 set -x LOCALE_ARCHIVE /usr/lib/locale/locale-archive
+set -x LLAMA_SERVER_URL http://127.0.0.1:8877
 if type -q device_specific
     device_specific
 end
 
 if status is-interactive
+    set -gx ATUIN_NOBIND "true"
     atuin init fish | source
+    bind \cr _atuin_search
 end
 
 # Paths
@@ -38,18 +48,6 @@ end
 ## Zoxide
 if type -q zoxide
     zoxide init fish | source
-    bind ctrl-z 'cd (tv zoxide --height 20 --layout portrait)' repaint
-    bind ctrl-shift-g 'tv text' repaint
-    bind ctrl-shift-f 'tv files' repaint
-end
-
-if type -q wine
-    set -x WINEPREFIX /home/natombrio/.wine
-end
-
-## Pyenv
-if type -q pyenv
-    pyenv init - | source
 end
 
 ## cargo

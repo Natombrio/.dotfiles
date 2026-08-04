@@ -1,5 +1,6 @@
 plugin/packer_compiled.lua
 configs/nvim/.config/nvim/lazy-lock.json
+configs/hyprland/.config/hypr/device_specific.lua
 configs/common/.config/fish/completions
 configs/common/.config/fish/conf.d
 configs/common/.config/fish/functions/*.fish

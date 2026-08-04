@@ -24,6 +24,9 @@ local lsps = {
         },
     },
     {
+        "gopls",
+    },
+    {
         "lua_ls",
         {
             on_init = function(client)

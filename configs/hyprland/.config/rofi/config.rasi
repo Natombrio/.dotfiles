@@ -150,6 +150,7 @@ refilter-timeout-limit: 1;
       action: "kb-cancel";
       delay:  0;
   }
+
   filebrowser {
       directories-first: true;
       sorting-method:    "name";
@@ -158,8 +159,9 @@ refilter-timeout-limit: 1;
 
 @theme "Arc-Dark"
 listview {
-    lines: 6;
+    lines: 3;
 }
+
 configuration {
-    font: "RobotoMonoNerdFontMono-Bold 15";
+    font: "RobotoMonoNerdFontMono-Bold 25";
 }

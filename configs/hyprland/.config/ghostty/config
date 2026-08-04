@@ -3,7 +3,7 @@ background-opacity = 0.90
 background = 000000
 font-family = RobotoMono Nerd Font
 font-size = 14
-scrollback-limit = 1000000
+scrollback-limit = 10000000
 
 keybind = clear
 keybind = ctrl+shift+,=reload_config
