@@ -12,6 +12,17 @@ alias gcom "git commit"
 alias greb "git rebase"
 alias gP "git push"
 alias gp "git pull"
+
+function create_herdr_ws
+    set -l workspace_name $argv[1]
+    set -l ws_id (herdr workspace create --label $workspace_name --cwd (pwd) | jq -r '.result.workspace.workspace_id')
+    herdr tab rename $ws_id:t1 agent
+    herdr tab create --workspace $ws_id --label shell
+    herdr tab create --workspace $ws_id --label server
+    herdr tab create --workspace $ws_id --label todo
+end
+
+
 alias cat bat
 abbr -a v nvim
 

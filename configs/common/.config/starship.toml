@@ -40,6 +40,9 @@ format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
 [rust]
 format = '\[[$symbol($version)]($style)\]'
 
+[gcloud]
+disabled = true
+
 [username]
 format = '\[[$user]($style)\]'
 
